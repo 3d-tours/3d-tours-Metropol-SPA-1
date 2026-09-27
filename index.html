@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+		<title>&#1061;&#1086;&#1083;&#1083; 1 &#1101;&#1090;&#1072;&#1078;&#1072;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1074;&#1093;&#1086;&#1076;&#1072;</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="mobile-web-app-capable" content="yes" />		
+		<style type="text/css" title="Default">
+			body, div, h1, h2, h3, span, p {
+				font-family: Verdana,Arial,Helvetica,sans-serif;
+			}
+			/* fullscreen */
+			html {
+				height:100%;
+			}
+			body {
+				height:100%;
+				margin: 0px;
+				overflow:hidden; /* disable scrollbars */
+				font-size: 10pt;
+			}
+			/* fix for scroll bars on webkit & >=Mac OS X Lion */ 
+			::-webkit-scrollbar {
+				background-color: rgba(0,0,0,0.5);
+				width: 0.75em;
+			}
+			::-webkit-scrollbar-thumb {
+    			background-color:  rgba(255,255,255,0.5);
+			}
+		</style>	
+	</head>
+	<body>
+<!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
+		<script type="text/javascript" src="pano2vr_player.js">
+		</script>
+		<script type="text/javascript" src="skin.js">
+		</script>
+		<div id="container" style="width:100%;height:100%;">
+		<br>Loading...<br><br>
+		This content requires HTML5 with CSS3 3D Transforms or WebGL.
+		</div>
+		<script type="text/javascript">
+		var startNode=document.location.hash.substring(1);
+		if (("onhashchange" in window) && (!(/MSIE (\d+\.\d+);/.test(navigator.userAgent)))) {
+			window.onhashchange = function () {
+				pano.openNext('{' + window.location.hash.substring(1) + '}');
+         	}
+	    } else {
+        	var lastHash = window.location.hash;
+        	window.setInterval(function () {
+	           	if (window.location.hash != lastHash) {
+   	        		lastHash = window.location.hash;
+					pano.openNext('{' + window.location.hash.substring(1) + '}');
+        	   	}
+        	}, 100);
+		}
+	
+			// create the panorama player with the container
+			pano=new pano2vrPlayer("container");
+			pano.startNode=startNode;
+		// add the skin object
+		skin=new pano2vrSkin(pano);
+		// load the configuration
+		panorama='<?xml version="1.0" encoding="UTF-8"?>';
+			panorama+='<tour start="node1">';
+			panorama+='  <panorama id="node16">';
+			panorama+='    <input flat="1" cylinder="1" levelbiashidpi="0.400" leveltileurl="tiles/&#1055;&#1083;&#1072;&#1085; 1 &#1101;&#1090;&#1072;&#1078; 7_07_26 &#1082; 3&#1076; &#1090;&#1091;&#1088;&#1091;/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="5579" levelbias="0.400" overlap="1" levelingpitch="0" width="10720" levelingroll="0">';
+			panorama+='      <level preload="0" height="5579" predecode="0" width="10720"/>';
+			panorama+='      <level preload="0" height="2789" predecode="0" width="5360"/>';
+			panorama+='      <level preload="0" height="1394" predecode="0" width="2680"/>';
+			panorama+='      <level preload="0" height="697" predecode="0" width="1340"/>';
+			panorama+='      <level preload="0" height="348" predecode="0" width="670"/>';
+			panorama+='      <level preload="1" height="174" predecode="1" width="335"/>';
+			panorama+='      <preview color="0x808080"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1055;&#1083;&#1072;&#1085; 1 &#1101;&#1090;&#1072;&#1078;&#1072;" copyright="" description="" longitude="" datetime="2026:09:26 15:34:37" comment="" info="" latitude="" tags="&#1095;&#1077;&#1088;&#1090;&#1077;&#1078;&#1080;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-15.17" title="" description="" target="" url="{node1}" pan="-75.1" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-10.29" title="" description="" target="" url="{node14}" pan="-73.96" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-1.13" title="" description="" target="" url="{node17}" pan="-79.74" id="Point03" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-9.11" title="" description="" target="" url="{node18}" pan="-80.68" id="Point04" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-22.23" title="" description="" target="" url="" pan="-71.57" id="Point05" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-24.86" title="" description="" target="" url="{node11}" pan="-67.55" id="Point06" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-18.94" title="" description="" target="" url="{node3}" pan="-63.97" id="Point07" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-14.09" title="" description="" target="" url="{node12}" pan="-65.33" id="Point08" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-12.45" title="" description="" target="" url="{node15}" pan="-61.62" id="Point09" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-7.1" title="" description="" target="" url="{node10}" pan="-65.53" id="Point10" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-1.39" title="" description="" target="" url="{node9}" pan="-60.32" id="Point11" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="4.97" title="" description="" target="" url="{node6}" pan="-68.95" id="Point12" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="10.89" title="" description="" target="" url="{node5}" pan="-68.04" id="Point13" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="4.18" title="" description="" target="" url="{node8}" pan="-51.63" id="Point14" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="8.37" title="" description="" target="" url="{node7}" pan="-40.64" id="Point15" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="2.82" title="" description="" target="" url="{node4}" pan="-75.15" id="Point16" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node1">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/21/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1061;&#1086;&#1083;&#1083; 1 &#1101;&#1090;&#1072;&#1078;&#1072;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1074;&#1093;&#1086;&#1076;&#1072;" copyright="" description="" longitude="" datetime="2026:09:25 16:51:32" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-30.34" title="" description="" target="" url="{node2}" pan="89.77" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-24.01" title="" description="" target="" url="{node14}" pan="-65.46" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-2.91" title="" description="" target="" url="{node15}" pan="5.29" id="Point03" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-17.64" title="" description="" target="" url="{node12}" pan="0.38" id="Point04" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-13.64" title="" description="" target="" url="{node10}" pan="-15.82" id="Point05" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-11.31" title="" description="" target="" url="{node6}" pan="-30.61" id="Point06" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-9.39" title="" description="" target="" url="{node9}" pan="-18.61" id="Point07" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-3.91" title="" description="" target="" url="{node11}" pan="75.01" id="Point08" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-4.79" title="" description="" target="" url="{node3}" pan="32.13" id="Point09" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-81.16" title="" description="" target="" url="{node16}" pan="86.38" id="Point10" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="4.41" title="" description="" target="" url="{node17}" pan="-82.62" id="Point11" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node14">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/49/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1051;&#1077;&#1089;&#1090;&#1085;&#1080;&#1094;&#1072; &#1075;&#1083;&#1072;&#1074;&#1085;&#1072;&#1103;. &#1074;&#1080;&#1076; &#1089; 1 &#1101;&#1090;&#1072;&#1078;&#1072;" copyright="" description="" longitude="" datetime="2026:09:26 15:10:56" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-22.88" title="" description="" target="" url="{node1}" pan="-159.31" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="5.39" title="" description="" target="" url="{node17}" pan="13.26" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-60.26" title="" description="" target="" url="{node16}" pan="84.1" id="Point03" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node17">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/12/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1051;&#1077;&#1089;&#1090;&#1085;&#1080;&#1094;&#1072; &#1075;&#1083;&#1072;&#1074;&#1085;&#1072;&#1103;, &#1074;&#1080;&#1076; &#1089; &#1084;&#1077;&#1078;&#1083;&#1077;&#1089;&#1090;&#1085;&#1080;&#1095;&#1085;&#1086;&#1081; &#1087;&#1083;&#1086;&#1097;&#1072;&#1076;&#1082;&#1080;" copyright="" description="" longitude="" datetime="2026:09:22 12:28:23" comment="" info="" latitude="" tags="&#1083;&#1077;&#1089;&#1090;&#1085;&#1080;&#1094;&#1072; 1" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-19.98" title="" description="" target="" url="{node14}" pan="49.81" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="5.48" title="" description="" target="" url="{node18}" pan="89.62" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-80.54" title="" description="" target="" url="{node16}" pan="161.99" id="Point03" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node18">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/11/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1051;&#1077;&#1089;&#1090;&#1085;&#1080;&#1094;&#1072; &#1075;&#1083;&#1072;&#1074;&#1085;&#1072;&#1103;, &#1074;&#1080;&#1076; &#1089;&#1086; 2 &#1101;&#1090;&#1072;&#1078;&#1072;" copyright="" description="" longitude="" datetime="2026:09:22 12:18:20" comment="" info="" latitude="" tags="&#1083;&#1077;&#1089;&#1090;&#1085;&#1080;&#1094;&#1072; 1" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-20.75" title="&#1050;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088; 2 &#1101;&#1090;&#1072;&#1078;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1089;&#1072;&#1083;&#1086;&#1085;&#1072; &#1082;&#1088;&#1072;&#1089;&#1086;&#1090;&#1099;" description="&#1050;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088; 2 &#1101;&#1090;&#1072;&#1078;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1089;&#1072;&#1083;&#1086;&#1085;&#1072; &#1082;&#1088;&#1072;&#1089;&#1086;&#1090;&#1099;" target="_self" url="https://3d-tours.github.io/3d-tours-Metropol-SPA-2/#node101" pan="-177.96" id="Point02" skinid="weblink"/>';
+			panorama+='      <hotspot tilt="-28.61" title="" description="" target="" url="{node17}" pan="-9.56" id="Point03" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-80.94" title="" description="" target="" url="{node16}" pan="90.78" id="Point04" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-21.67" title="&#1050;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088; 2 &#1101;&#1090;&#1072;&#1078;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1083;&#1080;&#1092;&#1090;&#1072;" description="&#1050;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088; 2 &#1101;&#1090;&#1072;&#1078;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1083;&#1080;&#1092;&#1090;&#1072;" target="_self" url="https://3d-tours.github.io/3d-tours-Metropol-SPA-2/" pan="142.1" id="Point01" skinid="weblink"/>';
+			panorama+='      <hotspot tilt="-2.82" title="&#1055;&#1077;&#1088;&#1077;&#1093;&#1086;&#1076; &#1074; &#1075;&#1086;&#1089;&#1090;&#1080;&#1085;&#1080;&#1094;&#1091;" description="&#1055;&#1077;&#1088;&#1077;&#1093;&#1086;&#1076; &#1074; &#1075;&#1086;&#1089;&#1090;&#1080;&#1085;&#1080;&#1094;&#1091;" target="_self" url="https://3d-tours.github.io/3d-tours-Metropol-SPA-2/#node104" pan="178.49" id="Point05" skinid="weblink"/>';
+			panorama+='      <hotspot tilt="-77.33" title="&#1055;&#1083;&#1072;&#1085; 2 &#1101;&#1090;&#1072;&#1078;&#1072;" description="&#1055;&#1083;&#1072;&#1085; 2 &#1101;&#1090;&#1072;&#1078;&#1072;" target="_self" url="https://3d-tours.github.io/3d-tours-Metropol-SPA-2/#node14" pan="43.71" id="Point06" skinid="weblink"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node2">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/23/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1061;&#1086;&#1083;&#1083; 1 &#1101;&#1090;&#1072;&#1078;&#1072;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1088;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;&#1072; 1" copyright="" description="" longitude="" datetime="2026:09:25 17:40:05" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-30.97" title="" description="" target="" url="{node1}" pan="164.57" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-15.06" title="" description="" target="" url="{node14}" pan="-175.03" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-11.43" title="" description="" target="" url="{node11}" pan="-6.69" id="Point03" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-23.33" title="" description="" target="" url="{node3}" pan="-72.49" id="Point04" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-14.98" title="" description="" target="" url="{node12}" pan="-113.94" id="Point05" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-1.32" title="" description="" target="" url="{node15}" pan="-108.68" id="Point06" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-11.87" title="" description="" target="" url="{node10}" pan="-132.53" id="Point07" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-72.24" title="" description="" target="" url="{node16}" pan="85.89" id="Point08" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node11">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/24/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1061;&#1086;&#1083;&#1083; 1 &#1101;&#1090;&#1072;&#1078;&#1072;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1088;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;&#1072; 2" copyright="" description="" longitude="" datetime="2026:09:25 22:54:08" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-9.4" title="" description="" target="" url="{node14}" pan="5.82" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-13.49" title="" description="" target="" url="{node1}" pan="-12.19" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-16.19" title="" description="" target="_blank" url="" pan="-20.51" id="Point03" skinid="ht_url"/>';
+			panorama+='      <hotspot tilt="-12.94" title="" description="" target="" url="{node12}" pan="39.44" id="Point04" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-0.17" title="" description="" target="" url="{node15}" pan="48.71" id="Point05" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-24.25" title="" description="" target="" url="{node3}" pan="72.7" id="Point06" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-82.91" title="" description="" target="" url="{node16}" pan="95.57" id="Point07" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node3">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/35/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1061;&#1086;&#1083;&#1083; 1 &#1101;&#1090;&#1072;&#1078;&#1072;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1088;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;&#1072; 3" copyright="" description="" longitude="" datetime="2026:09:25 19:52:33" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-25.66" title="" description="" target="" url="{node12}" pan="4.67" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-2.23" title="" description="" target="" url="{node15}" pan="32.12" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-13.92" title="" description="" target="" url="{node10}" pan="13.46" id="Point03" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-26.23" title="" description="" target="" url="{node2}" pan="-74.61" id="Point04" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-23.62" title="" description="" target="" url="{node11}" pan="-114.36" id="Point05" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-15.53" title="" description="" target="" url="{node1}" pan="-57.2" id="Point06" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-7.82" title="" description="" target="" url="{node14}" pan="-15.26" id="Point07" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-77.19" title="" description="" target="" url="{node16}" pan="99.49" id="Point08" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-3.57" title="&#1050;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088; 2 &#1101;&#1090;&#1072;&#1078;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1083;&#1080;&#1092;&#1090;&#1072;" description="&#1050;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088; 2 &#1101;&#1090;&#1072;&#1078;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1083;&#1080;&#1092;&#1090;&#1072;" target="_self" url="https://3d-tours.github.io/3d-tours-Metropol-SPA-2/" pan="2.92" id="Point09" skinid="weblink"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node12">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/25/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1061;&#1086;&#1083;&#1083; 1 &#1101;&#1090;&#1072;&#1078;&#1072;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1075;&#1072;&#1088;&#1076;&#1077;&#1088;&#1086;&#1073;&#1072;" copyright="" description="" longitude="" datetime="2026:09:25 23:23:13" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-18.19" title="" description="" target="" url="{node1}" pan="11.45" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-14.88" title="" description="" target="" url="{node14}" pan="41.86" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-25.07" title="" description="" target="" url="{node10}" pan="87.64" id="Point03" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-28.1" title="" description="" target="" url="{node3}" pan="-69.6" id="Point04" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-3.68" title="" description="" target="" url="{node11}" pan="-53.54" id="Point05" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-11.43" title="" description="" target="" url="{node2}" pan="-19.48" id="Point06" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-35.17" title="" description="" target="" url="{node15}" pan="-174.79" id="Point07" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-72.77" title="" description="" target="" url="{node16}" pan="6.37" id="Point08" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-7.33" title="&#1050;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088; 2 &#1101;&#1090;&#1072;&#1078;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1083;&#1080;&#1092;&#1090;&#1072;" description="&#1050;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088; 2 &#1101;&#1090;&#1072;&#1078;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1083;&#1080;&#1092;&#1090;&#1072;" target="_self" url="https://3d-tours.github.io/3d-tours-Metropol-SPA-2/" pan="77.12" id="Point09" skinid="weblink"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node15">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/42/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1043;&#1072;&#1088;&#1076;&#1077;&#1088;&#1086;&#1073;" copyright="" description="" longitude="" datetime="2026:09:26 15:24:15" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-82.86" title="" description="" target="" url="{node16}" pan="34.38" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-11.53" title="" description="" target="" url="{node1}" pan="11.61" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-14.6" title="" description="" target="" url="{node2}" pan="-27.57" id="Point03" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-9.82" title="" description="" target="" url="{node14}" pan="31.63" id="Point05" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-20.09" title="" description="" target="" url="{node12}" pan="3.2" id="Point06" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-19.62" title="" description="" target="" url="{node10}" pan="63.2" id="Point07" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node10">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/28/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1061;&#1086;&#1083;&#1083; 1 &#1101;&#1090;&#1072;&#1078;&#1072;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1083;&#1080;&#1092;&#1090;&#1072;" copyright="" description="" longitude="" datetime="2026:09:25 22:19:36" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-13.97" title="" description="" target="" url="{node1}" pan="-98.3" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-11.42" title="" description="" target="" url="{node14}" pan="-85.67" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-12.32" title="" description="" target="" url="{node11}" pan="-113.05" id="Point03" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-14.06" title="" description="" target="" url="{node6}" pan="2.64" id="Point04" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-9.45" title="" description="" target="" url="{node5}" pan="9.69" id="Point05" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-21.23" title="" description="" target="" url="{node9}" pan="56.41" id="Point06" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-81.68" title="" description="" target="" url="{node16}" pan="123.26" id="Point07" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="2.78" title="" description="" target="" url="{node4}" pan="-9.13" id="Point08" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-4.8" title="" description="" target="" url="{node8}" pan="57.15" id="Point09" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-26.41" title="" description="" target="" url="{node12}" pan="-120.73" id="Point11" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-8.41" title="&#1050;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088; 2 &#1101;&#1090;&#1072;&#1078;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1083;&#1080;&#1092;&#1090;&#1072;" description="&#1050;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088; 2 &#1101;&#1090;&#1072;&#1078;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1083;&#1080;&#1092;&#1090;&#1072;" target="_self" url="https://3d-tours.github.io/3d-tours-Metropol-SPA-2/" pan="-54.03" id="Point10" skinid="weblink"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node6">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/32/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1061;&#1086;&#1083;&#1083; 1 &#1101;&#1090;&#1072;&#1078;&#1072;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1072;&#1087;&#1090;&#1077;&#1082;&#1080;" copyright="" description="" longitude="" datetime="2026:09:25 20:18:29" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-27.68" title="" description="" target="" url="{node4}" pan="-172.03" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-73.31" title="" description="" target="" url="{node16}" pan="-17.32" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-13.52" title="" description="" target="" url="{node10}" pan="85.1" id="Point03" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-13" title="" description="" target="" url="{node9}" pan="72.98" id="Point04" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-23.25" title="" description="" target="" url="{node5}" pan="-49.29" id="Point05" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node5">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/33/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1061;&#1086;&#1083;&#1083; 1 &#1101;&#1090;&#1072;&#1078;&#1072;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1078;&#1077;&#1085;&#1089;&#1082;&#1086;&#1081; &#1088;&#1072;&#1079;&#1076;&#1077;&#1074;&#1072;&#1083;&#1082;&#1080;" copyright="" description="" longitude="" datetime="2026:09:25 20:07:00" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-8.83" title="" description="" target="" url="{node4}" pan="3.38" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-16.42" title="" description="" target="" url="{node6}" pan="-27.96" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-71.99" title="" description="" target="" url="{node16}" pan="42.07" id="Point03" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node4">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/34/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1040;&#1087;&#1090;&#1077;&#1082;&#1072;" copyright="" description="" longitude="" datetime="2026:09:25 20:02:02" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-17.18" title="" description="" target="" url="{node5}" pan="145.83" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-26.58" title="" description="" target="" url="{node6}" pan="-141.04" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-86.62" title="" description="" target="" url="{node16}" pan="42.35" id="Point03" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node9">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/29/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1061;&#1086;&#1083;&#1083; 1 &#1101;&#1090;&#1072;&#1078;&#1072;, &#1074;&#1080;&#1076; &#1086;&#1090; &#1082;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088;&#1072; &#1074; &#1090;&#1077;&#1088;&#1084;&#1072;&#1083;&#1100;&#1085;&#1091;&#1102; &#1079;&#1086;&#1085;&#1091;" copyright="" description="" longitude="" datetime="2026:09:25 22:03:28" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-3.44" title="" description="" target="" url="{node15}" pan="-43.79" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-20.17" title="" description="" target="" url="{node10}" pan="-38.96" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-18.54" title="" description="" target="" url="{node8}" pan="170.79" id="Point03" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-81.57" title="" description="" target="" url="{node16}" pan="-26.89" id="Point04" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node8">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/30/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1050;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088; &#1074; &#1090;&#1077;&#1088;&#1084;&#1072;&#1083;&#1100;&#1085;&#1091;&#1102; &#1079;&#1086;&#1085;&#1091;, &#1074;&#1080;&#1076; 1" copyright="" description="" longitude="" datetime="2026:09:25 21:36:17" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-13.55" title="" description="" target="" url="{node7}" pan="1.43" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-72.57" title="" description="" target="" url="{node16}" pan="4.29" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-2.13" title="" description="" target="" url="{node9}" pan="-180.4" id="Point03" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node7">';
+			panorama+='    <input levelbiashidpi="0.400" leveltileurl="tiles/31/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="1500" levelbias="0.400" overlap="1" levelingpitch="0" width="1500" levelingroll="0">';
+			panorama+='      <level preload="0" height="1500" predecode="0" width="1500"/>';
+			panorama+='      <level preload="0" height="750" predecode="0" width="750"/>';
+			panorama+='      <level preload="1" height="375" predecode="1" width="375"/>';
+			panorama+='      <preview color="0x808080" strip="1"/>';
+			panorama+='    </input>';
+			panorama+='    <view pannorth="0" fovmode="0">';
+			panorama+='      <start tilt="0" pan="0" fov="70"/>';
+			panorama+='      <min tilt="-90" pan="0" fov="5"/>';
+			panorama+='      <max tilt="90" pan="360" fov="120"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="&#1050;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088; &#1074; &#1090;&#1077;&#1088;&#1084;&#1072;&#1083;&#1100;&#1085;&#1091;&#1102; &#1079;&#1086;&#1085;&#1091;, &#1074;&#1080;&#1076; 2" copyright="" description="" longitude="" datetime="2026:09:25 21:33:13" comment="" info="" latitude="" tags="&#1056;&#1077;&#1089;&#1077;&#1087;&#1096;&#1085;+&#1072;&#1087;&#1090;&#1077;&#1082;&#1072;" author="" source=""/>';
+			panorama+='    <hotspots height="20" wordwrap="1" width="180">';
+			panorama+='      <label borderradius="1" textcolor="0x000000" backgroundcolor="0xffffff" borderalpha="1" height="20" background="1" textalpha="1" wordwrap="1" backgroundalpha="1" border="1" enabled="1" width="180" bordercolor="0x000000"/>';
+			panorama+='      <polystyle handcursor="1" backgroundcolor="0x0000ff" borderalpha="1" backgroundalpha="0.2509803921568627" mode="0" bordercolor="0x0000ff"/>';
+			panorama+='      <hotspot tilt="-1.21" title="" description="" target="" url="{node9}" pan="-1.2" id="Point01" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-88.23" title="" description="" target="" url="{node16}" pan="-5.06" id="Point02" skinid="ht_node"/>';
+			panorama+='      <hotspot tilt="-16.65" title="" description="" target="" url="{node8}" pan="-0.4" id="Point03" skinid="ht_node"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <transition type="crossdissolve" softedge="0" zoomfov="20" zoomoutpause="1" zoomin="0" blendcolor="0x000000" enabled="0" blendtime="1" zoomspeed="2" zoomout="0"/>';
+			panorama+='    <control lockedkeyboardzoom="0" lockedmouse="0" lockedwheel="0" speedwheel="1" contextfullscreen="0" invertcontrol="1" invertwheel="1" hideabout="0" sensitivity="8" simulatemass="1" lockedkeyboard="0" dblclickfullscreen="0"/>';
+			panorama+='  </panorama>';
+			panorama+='</tour>';
+			panorama+='';
+		pano.readConfigString(panorama);
+		</script>
+		<noscript>
+			<p><b>Please enable Javascript!</b></p>
+		</noscript>
+<!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - --> 
+		<!-- Hack needed to hide the url bar on iOS 9, iPhone 5s --> 
+		<div style="width:1px;height:1px;"></div>
+	</body>
+</html>
